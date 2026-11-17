@@ -6,11 +6,13 @@
 <section>
     {% if categories %}
         {% for category in categories %}
-        <br>{{category.name}} </br></articles>
+            <br>{{category.name}} </br></articles>
+            <a href="{{ path('app_category_show', {id: category.id}) }}">
+                Voir le détail
+            </a>
         {% endfor %}
     {% else %}
-        Liste vide
+        Liste vide.
     {% endif %}
-
 </section>
 {% endblock %}
