@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Livres{% endblock %}
+
+{% block body %}
+<h1>Liste des livres</h1>
+    {% for book in books %}
+        - {{ book.title }} - {{ book.author }}
+        <a href="{{ path('app_book_show', {id: book.id}) }}">
+            Voir le détail
+        </a>
+        </br>
+    {% endfor %}
+{% endblock %}

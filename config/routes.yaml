@@ -9,3 +9,12 @@
 
 controllers:
     resource: routing.controllers
+app_cda_index:
+    path: /cda
+    controller: \App\Controller\CdaController::index
+app_home:
+    path: /
+    controller: \App\Controller\HomeController::index
+app_profile:
+    path: /profile/{name}
+    controller: \App\Controller\UserController::profile
