@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Utilisateurs{% endblock %}
+
+{% block body %}
+<section>
+    <h1>Liste des utilisateurs</h1>
+    {% if users %}
+        {% for user in users %}
+        <articles>{{user.firstname}}</br></articles>
+        <articles>{{user.lastname}}</br></articles>
+        <articles>{{user.email}}</br></articles><hr>
+        {% endfor %}
+    {% else %}
+        Liste vide.
+    {% endif %}
+</section>
+{% endblock %}

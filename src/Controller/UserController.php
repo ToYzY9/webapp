@@ -4,9 +4,25 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Attribute\Route;
+use App\Service\UserService;
 
 final class UserController extends AbstractController
 {
+
+    function __construct(private UserService $userService) {}
+
+    #[Route('/users', name: 'app_users')]
+    public function showAllUsers(): Response
+    {
+        $users = $this->userService->getAllUsers();
+        // dd($users);
+        return $this->render('user/showAllUsers.html.twig', [
+            'users' => $users,
+        ]);
+    }
+
+
     public function profile(string $name): Response
     {
         // $name = "Alice Martin";
@@ -18,4 +34,8 @@ final class UserController extends AbstractController
             'city' => $city,
         ]);
     }
+
+
+
+
 }
