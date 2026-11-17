@@ -22,6 +22,16 @@ final class UserController extends AbstractController
         ]);
     }
 
+    #[Route('/users/{id}', name: 'app_user', requirements: ['id' => '\d+'])]
+    public function showUserById(int $id): Response
+    {
+        $user = $this->userService->getUserById($id);
+        // dd($users);
+        return $this->render('user/showUserId.html.twig', [
+            'user' => $user,
+        ]);
+    }
+
 
     public function profile(string $name): Response
     {
