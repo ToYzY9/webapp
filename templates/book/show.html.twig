@@ -1,15 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Les Livres{% endblock %}
+{% block title %}Details Livre{% endblock %}
 
 {% block body %}
-<h1>Liste des livres</h1>
-    {% for book in books %}
-        {% if book.id === bookId %}
-        - {{ book.title }} - {{ book.author }} </br>
+    {% if book %}
+        <h1>Le Livre: {{ book.title }}</h1>
+        <span>Auteur: {{ book.author }}</span>
+        </br>
+        </br>
+        </br>
         <a href="{{ path('app_books') }}">
-            Liste des livres
+            Retour vers à la liste des livres
         </a>
-        {% endif %}
-    {% endfor %}
+        {% else %}
+        <a href="{{ path('app_books') }}">
+            Livre n'existe pas
+        </a>
+    {% endif %}
 {% endblock %}

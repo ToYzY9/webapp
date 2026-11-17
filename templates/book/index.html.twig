@@ -4,6 +4,7 @@
 
 {% block body %}
 <h1>Liste des livres</h1>
+{% if books %}
     {% for book in books %}
         - {{ book.title }} - {{ book.author }}
         <a href="{{ path('app_book_show', {id: book.id}) }}">
@@ -11,4 +12,7 @@
         </a>
         </br>
     {% endfor %}
+{% else %}
+    Liste vide.
+{% endif %}
 {% endblock %}
