@@ -23,10 +23,10 @@ final class CategoryController extends AbstractController
     #[Route('/categories/{id}', name: 'app_category_show')]
     public function showCategorieById(int $id): Response
     {
-        $categorie = $this->catService->getCategoryById($id);
+        $category = $this->catService->getCategoryById($id);
         // dd($categorie);
         return $this->render('category/showCategorieId.html.twig', [
-            'categorie' => $categorie,
+            'category' => $category,
         ]);
     }
 }

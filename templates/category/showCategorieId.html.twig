@@ -4,18 +4,13 @@
 
 {% block body %}
 <section>
-    {% if categorie %}
-        <br>{{categorie.name}} </br></articles>
-        </br>
-        </br>
-        </br>
-        <a href="{{ path('app_categories') }}">
-            Retour à la liste des catégories
-        </a>
+    {% if category %}
+        <br>{{category.name}} </br></articles>
     {% else %}
-        <a href="{{ path('app_categories') }}">
             Categorie n'existe pas.
-        </a>
     {% endif %}
+        <a href="{{ path('app_categories') }}">
+            Retour
+        </a>
 </section>
 {% endblock %}
