@@ -1,0 +1,25 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ToYzY9/webapp.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ToYzY9/webapp/issues"
+  },
+  "homepage": "https://github.com/ToYzY9/webapp#readme",
+  "devDependencies": {
+    "daisyui": "^5.8.1"
+  }
+}
