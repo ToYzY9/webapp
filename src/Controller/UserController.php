@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\DTO\UserToUserDTOWrapper;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -32,6 +33,18 @@ final class UserController extends AbstractController
         ]);
     }
 
+    #[Route('/users/dto/{id}', name: 'app_user_dto', requirements: ['id' => '\d+'])]
+    public function showUserListDTOById(int $id): Response
+    {
+        $user = $this->userService->getUserById($id);
+
+        if ($user) {
+            UserToUserDTOWrapper::wrapUserToUserListDot($user);
+        }
+        return $this->render('user/showUserDtoId.html.twig', [
+            'user' => $user,
+        ]);
+    }
 
     public function profile(string $name): Response
     {

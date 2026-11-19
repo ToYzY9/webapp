@@ -3,9 +3,6 @@
 @source "../../templates";
 
 @plugin "daisyui" {
-    themes: nord --default, dark --prefersdark, cupcake, corporate, nord;
+    themes: cupcake --default, dark --prefersdark, cupcake, corporate, nord;
 }
 
-body {
-    background-color: skyblue;
-}

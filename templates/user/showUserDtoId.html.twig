@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Detail Utilisateur{% endblock %}
+
+{% block body %}
+<section>
+    {% if user %}
+    <h1>{{user.firstname}} {{user.lastname}}</h1>
+        <article><span>Email: </span>{{user.email}}</br></article><hr>
+    {% else %}
+        Utilisateur n'existe pas.
+    {% endif %}
+    <a href="{{ path('app_users') }}">
+        Retour
+    </a>
+</section>
+{% endblock %}
