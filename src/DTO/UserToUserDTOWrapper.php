@@ -11,7 +11,7 @@ final class UserToUserDTOWrapper
         return new UserListDTO(
             $user->getFirstname(),
             $user->getFirstname(),
-            $user->getEmail()
+            $user->getEmail(),
         );
     }
 }
