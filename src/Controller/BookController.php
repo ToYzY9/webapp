@@ -17,7 +17,6 @@ final class BookController extends AbstractController
     public function index(): Response
     {
         $books = $this->bookService->getAllBooks();
-        // dd($books);
         return $this->render('book/index.html.twig', [
             'books' => $books
         ]);
@@ -30,6 +29,16 @@ final class BookController extends AbstractController
         // dd($book);
         return $this->render('book/show.html.twig', [
             'book'=> $book
+        ]);
+    }
+
+    #[Route('/books/search/{title}', name: 'app_book_search')]
+    public function showBookByTitle(string $title): Response
+    {
+        $books = $this->bookService->getBookByTitle($title);
+        // dd($books);
+        return $this->render('book/index.html.twig', [
+            'books'=> $books
         ]);
     }
 }
